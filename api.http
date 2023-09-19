@@ -1,0 +1,43 @@
+### Recuperar todas las películas 
+GET http://localhost:1234/movies
+
+
+### Recuperar una pelicula por ID
+GET http://localhost:1234/movies/5ad1a235-0d9c-410a-b32b-220d91689a08
+
+### Recuperar una pelicula por género
+GET http://localhost:1234/movies?genre=Action
+ 
+### Crear una película
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "sql": "SELECT * FROM users", 
+  "title": "The Shawshank Redemption",
+  "year": 1998,
+  "director": "Frank Darabont",
+  "duration": 142,
+  "poster": "https://i.ebayimg.com/images/g/4goAAOSwMyBe7hnQ/s-l1200.webp",
+  "genre": ["Drama"]
+
+}
+
+### Comprobar errores de la película
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "title": "The Shawshank Redemption",
+  "year": 1994
+}
+
+
+### Actualizar una pelicula. Solo una parte de la película
+
+PATCH http://localhost:1234/movies/5ad1a235-0d9c-410a-b32b-220d91689a08
+Content-Type: application/json
+
+{
+  "year": 2010
+}
