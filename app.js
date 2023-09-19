@@ -111,7 +111,7 @@ app.delete('/movies/:id', (req, res) => {
 // Las variables de entorno siempre tienen que ir en mayúscula
 const PORT = process.env.PORT ?? 1234
 app.listen(PORT, () => {
-  console.log(`Server listening on port http://localhost:${PORT}`)
+  console.log(`Server listening on port: ${PORT}`)
 })
 
 /* 
